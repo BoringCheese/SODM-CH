@@ -2,20 +2,6 @@
 
 基于 Ultralytics（8.4.x）的目标检测模型仓库，仅保留运行 **yolo26-lks-smoe-123** 所需的代码。
 
-## 模型结构
-
-配置文件：`ultralytics/cfg/models/custom/yolo26-lks-smoe-123.yaml`
-
-在 YOLO26 检测框架上引入三个自定义模块：
-
-| 模块 | 位置 | 作用 |
-| ---- | ---- | ---- |
-| `DWTLSK` | `ultralytics/nn/modules/conv.py` | Stem：Haar 小波分解 + 大核选择性门控（LSK），有序/无序双分支加权融合 |
-| `SFDDown` | `ultralytics/nn/modules/conv.py` | 下采样：抗混叠低频 + 无损 space-to-depth + Haar 高频细节，轻量内容门控融合 |
-| `SAHSEF` | `ultralytics/nn/modules/moe.py` | Neck 三尺度融合：尺度对齐 → 尺度加权 → 异构专家（detail/context/frequency）top-k 稀疏路由 → 轻量重组 |
-
-s 档约 203 万参数（632 层）。
-
 ## 安装
 
 ```bash
