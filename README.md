@@ -1,6 +1,6 @@
 # SODM-CH
 
-基于 Ultralytics（8.4.x）的目标检测模型仓库，仅保留运行 **yolo26-lks-smoe-123** 所需的代码。
+基于 Ultralytics（8.4.x）的目标检测模型仓库。
 
 ## 安装
 
